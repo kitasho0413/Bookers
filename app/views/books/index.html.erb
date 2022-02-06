@@ -11,11 +11,26 @@
 <% @books.each do |book| %>
   <thead>
     <tr>
-      <th><%= book.title %></th>
-      <th><%= book.body %></th>
-      
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      <td>
+        <span>
+          <%= link_to 'Show', "/books/#{book.id}" %>
+        </span>
+      </td>
+      <td>
+        <span>
+          <%= link_to 'Edit', "/books/#{book.id}/edit" %>
+        </span>
+      </td>
+      <td>
+        <span>
+          <%= link_to 'Destroy', "/books/#{book.id}", method: :delete, "data-confilm" => "Are you sure?" %>
+        </span>
+      </td>
     </tr>
   </thead>
+  
 <% end %>
 </table>
 
